@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jing Huang — professor at Southwest University. Research in sports management, physical education, and exercise and wellbeing.">
+  <title>Jing Huang | Professor, Southwest University</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink: #21313b;
+      --muted: #53646b;
+      --accent: #23726b;
+      --accent-dark: #15544e;
+      --gold: #b79258;
+      --paper: #f9f8f4;
+      --white: #ffffff;
+      --line: #e2e6e3;
+      --soft: #eaf3f0;
+      --content: 1110px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--white); font: 17px/1.65 "Segoe UI", Arial, sans-serif; }
+    a { color: inherit; }
+    .container { width: min(calc(100% - 48px), var(--content)); margin: 0 auto; }
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); box-shadow: 0 3px 14px rgba(33,49,59,.04); }
+    .nav-inner { min-height: 75px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; letter-spacing: .015em; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 35px; height: 35px; background: var(--ink); color: white; font: 700 16px Georgia, serif; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 9px 27px; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 13px; font-weight: 650; text-decoration: none; letter-spacing: .025em; }
+    .nav-links a:hover, .nav-links a:focus { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 5px; }
+    .hero { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .hero-inner { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 1.45fr); align-items: center; gap: clamp(42px, 7vw, 95px); padding: 74px 0 82px; }
+    .eyebrow { margin: 0 0 21px; color: var(--accent-dark); font-size: 12px; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; }
+    .hero h1 { margin: 0 0 12px; font: 500 clamp(52px, 6.4vw, 85px)/1.06 Georgia, "Times New Roman", serif; letter-spacing: -.055em; }
+    .hero-role { margin: 0 0 3px; color: var(--accent-dark); font-size: 19px; font-weight: 630; }
+    .hero-affiliation { margin: 0 0 23px; color: var(--muted); font-size: 15px; }
+    .hero-intro { max-width: 690px; margin: 0 0 27px; color: var(--muted); font-size: 18px; line-height: 1.65; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 10px 17px; border: 1px solid var(--accent-dark); color: var(--accent-dark); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: .025em; }
+    .button.primary { background: var(--accent-dark); color: white; }
+    .button:hover, .button:focus { box-shadow: 0 0 0 3px rgba(35,114,107,.12); }
+    .portrait { aspect-ratio: 5/7; max-width: 330px; width: 100%; margin: 0; padding: 10px; background: #e7ebe6; border: 1px solid #d5ddd7; }
+    .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    section { scroll-margin-top: 96px; }
+    .section { padding: 76px 0 82px; }
+    .section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: 215px minmax(0, 1fr); gap: 30px; align-items: start; margin-bottom: 34px; }
+    .section-number { color: var(--gold); font: 700 12px/1.6 "Segoe UI", Arial, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+    .section h2 { margin: 0; font: 500 clamp(34px, 4.2vw, 49px)/1.2 Georgia, serif; letter-spacing: -.035em; }
+    .section-desc { max-width: 720px; margin: 13px 0 0; color: var(--muted); }
+    .split { display: grid; grid-template-columns: 215px minmax(0, 1fr); gap: 30px; }
+    .pub-list { border-top: 1px solid var(--line); }
+    .pub { display: grid; grid-template-columns: 115px minmax(0, 1fr); gap: 25px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .pub-year { color: var(--accent-dark); font-size: 13px; font-weight: 750; letter-spacing: .055em; }
+    .pub h3 { margin: 0 0 5px; font: 500 22px/1.3 Georgia, serif; }
+    .pub p { margin: 0; color: var(--muted); font-size: 14px; }
+    .pub .pub-link { display: inline-block; margin-top: 9px; color: var(--accent-dark); font-size: 13px; font-weight: 700; }
+    .more-publications { margin-top: 25px; border: 1px solid var(--line); background: var(--paper); }
+    .more-publications summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 21px; color: var(--accent-dark); font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; }
+    .more-publications summary::-webkit-details-marker { display: none; }
+    .more-publications summary::after { content: "+"; font-size: 22px; font-weight: 400; line-height: 1; }
+    .more-publications[open] summary::after { content: "−"; }
+    .more-publications summary:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 3px; }
+    .more-publications .open-label { display: none; }
+    .more-publications[open] .closed-label { display: none; }
+    .more-publications[open] .open-label { display: inline; }
+    .more-publications .pub-list { padding: 0 21px; }
+    .more-publications .pub:last-child { border-bottom: 0; }
+    .project-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .project { display: grid; grid-template-columns: 115px minmax(0, 1fr); gap: 25px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .project-year { color: var(--accent-dark); font-size: 13px; font-weight: 750; letter-spacing: .055em; }
+    .project h3 { margin: 0 0 6px; font: 500 23px/1.3 Georgia, serif; }
+    .project p { margin: 0; color: var(--muted); font-size: 14px; }
+    .recognition { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .recognition-item { display: grid; grid-template-columns: 115px minmax(0, 1fr); gap: 25px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .recognition-item .recognition-year { color: var(--accent-dark); font-size: 13px; font-weight: 750; letter-spacing: .055em; }
+    .recognition-item strong { display: block; font: 500 20px/1.3 Georgia, serif; }
+    .recognition-item .detail { display: block; margin-top: 5px; color: var(--muted); font-size: 14px; }
+    .contact { padding: 72px 0 78px; background: var(--ink); color: white; }
+    .contact .eyebrow { color: #97c9ba; }
+    .contact h2 { margin: 0 0 15px; font: 500 clamp(36px, 4vw, 50px)/1.15 Georgia, serif; letter-spacing: -.03em; }
+    .contact p { max-width: 610px; margin: 0; color: #d0dcdb; }
+    .contact-detail { margin-top: 27px !important; color: white !important; font-size: 18px; }
+    footer { padding: 21px 0; background: #18252d; color: #aebdbe; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 800px) {
+      .nav-inner { padding: 15px 0; align-items: flex-start; flex-direction: column; gap: 12px; }
+      .nav-links { gap: 7px 15px; }
+      .hero-inner { grid-template-columns: 190px minmax(0, 1fr); gap: 28px; padding: 58px 0; }
+      .hero-intro { font-size: 16px; }
+      .section-heading, .split { grid-template-columns: 1fr; gap: 12px; }
+      section { scroll-margin-top: 125px; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 34px), var(--content)); }
+      .nav-links { gap: 7px 12px; }
+      .nav-links a { font-size: 12px; }
+      .hero-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; padding: 38px 0 56px; }
+      .portrait { width: 180px; margin: 0; padding: 7px; }
+      .hero h1 { font-size: 51px; }
+      .hero-role { font-size: 16px; }
+      .hero-intro { font-size: 17px; }
+      .section { padding: 57px 0; }
+      .pub, .project, .recognition-item { grid-template-columns: 1fr; gap: 5px; }
+      .footer-inner { flex-direction: column; gap: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">JH</span><span>Jing Huang</span></a>
+      <div class="nav-links">
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-inner">
+      <div class="portrait">
+        <img src="jing-huang-portrait.jpg?v=7a0ec447" alt="Portrait of Jing Huang" width="960" height="1344">
+      </div>
+      <div>
+        <p class="eyebrow">Sports management · Physical education</p>
+        <h1>Jing Huang</h1>
+        <p class="hero-role">Professor · Doctoral Supervisor</p>
+        <p class="hero-affiliation">Postdoctoral Co-supervisor · College of Teacher Education, Southwest University</p>
+        <p class="hero-intro">Jing Huang studies how sport is taught and governed, with a focus on public sports services and the relationship between exercise and mental health.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#publications">Publications</a>
+          <a class="button" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-heading"><span class="section-number">01 / Publications</span><div><h2>Publications</h2><p class="section-desc">Research on exercise, health, and sport policy.</p></div></div>
+        <div class="split"><div></div><div>
+          <div class="pub-list">
+            <article class="pub"><div class="pub-year">2026</div><div><h3>Internet-based exercise interventions for the treatment of depression and anxiety: a systematic review and meta-analysis of randomised controlled trials</h3><p><em>BMC Psychiatry</em> · Corresponding author</p><a class="pub-link" href="https://doi.org/10.1186/s12888-026-08403-4" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2026</div><div><h3>A dual moderation model of the relationship between depression and adolescent social media addiction</h3><p><em>Scientific Reports</em> · Corresponding author</p><a class="pub-link" href="https://doi.org/10.1038/s41598-026-62906-4" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2025</div><div><h3>The effect of physical exercise on apathy in older adults: a systematic review and meta-analysis</h3><p><em>Frontiers in Public Health</em> · Corresponding author</p><a class="pub-link" href="https://doi.org/10.3389/fpubh.2025.1617272" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2025</div><div><h3>A study of the therapeutic effects of yoga on symptoms associated with ADHD in children: Systematic review and meta-analysis</h3><p><em>Quality in Sport</em>, 38, 58756 · Corresponding author</p><a class="pub-link" href="https://doi.org/10.12775/QS.2025.38.58756" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2025</div><div><h3>Effects of exercise during pregnancy on postpartum depression: a meta-analysis</h3><p><em>Quality in Sport</em>, 42, 60590 · Corresponding author</p><a class="pub-link" href="https://doi.org/10.12775/QS.2025.42.60590" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2025</div><div><h3>The influence of gender stereotypes on the willingness of female non-sport majors at universities in Chongqing to participate in sport</h3><p><em>Journal of Wuhan Institute of Physical Education</em> · First author</p><a class="pub-link" href="https://doi.org/10.15930/j.cnki.wtxb.2025.01.010" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+          </div>
+          <details class="more-publications">
+            <summary><span class="closed-label">View all 14 publications</span><span class="open-label">Show fewer publications</span></summary>
+            <div class="pub-list">
+            <article class="pub"><div class="pub-year">2024</div><div><h3>Effects of high intensity interval training and moderate intensity continuous training on enjoyment and affective responses in overweight or obese people: a meta-analysis</h3><p><em>Frontiers in Public Health</em> · Corresponding author</p><a class="pub-link" href="https://doi.org/10.3389/fpubh.2024.1487789" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2024</div><div><h3>The transformation and upgrading of sports consumption enabled by new quality productive forces: underlying logic, practical challenges, and innovative pathways</h3><p><em>Journal of Xi'an Physical Education University</em> · First author · DOI: 10.16063/j.cnki.issn1001-747x.2024.03.007</p><a class="pub-link" href="https://xaty.cbpt.cnki.net/portal/journal/portal/client/paper/41bd949dea6f8bf48bc911091e654720" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2024</div><div><h3>Progress and future prospects of esports research in China: a textual analysis using NVivo 12</h3><p><em>Journal of Southwest Minzu University</em> · Single author</p><a class="pub-link" href="https://xnzs.cbpt.cnki.net/portal/journal/portal/client/paper/2f57e486a88a92df2fbf87723a6348e8" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2023</div><div><h3>Models, characteristics, and optimization pathways of policy instruments for integrating sport and education in China</h3><p><em>Journal of Southwest University (Social Sciences Edition)</em> · First author · DOI: 10.13718/j.cnki.xdsk.2023.03.018</p><a class="pub-link" href="https://doi.org/10.13718/j.cnki.xdsk.2023.03.018" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2023</div><div><h3>How the development of artificial intelligence affects spectator sports consumption: an analysis based on internet use data</h3><p><em>Journal of Xi'an Physical Education University</em> · First author</p><a class="pub-link" href="https://xaty.cbpt.cnki.net/portal/journal/portal/client/paper/adc0e4dd5fd615d89c85fe140f7ea071" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2022</div><div><h3>Reflection on a new pattern of coordinated development between school physical education and extracurricular training institutions under the “Double Reduction” policy</h3><p><em>Journal of Shenyang Sport University</em> · Corresponding author</p><a class="pub-link" href="https://doi.org/10.12163/j.ssu.20220558" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2016</div><div><h3>The necessity and feasibility of developing a mobile platform for public sports services in the era of big data</h3><p><em>Journal of Southwest China Normal University (Natural Science Edition)</em> · First author · DOI: 10.13718/j.cnki.xsxb.2016.12.022</p><a class="pub-link" href="https://doi.org/10.13718/j.cnki.xsxb.2016.12.022" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            <article class="pub"><div class="pub-year">2016</div><div><h3>Compare on the Curriculum of Athletes Training between Kinesiology Department at SUNY Cortland and Chinese College</h3><p><em>Journal of Southwest China Normal University (Natural Science Edition)</em> · First author · DOI: 10.13718/j.cnki.xsxb.2016.02.030</p><a class="pub-link" href="https://doi.org/10.13718/j.cnki.xsxb.2016.02.030" target="_blank" rel="noopener noreferrer">View publication ↗</a></div></article>
+            </div>
+          </details>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="projects">
+      <div class="container">
+        <div class="section-heading"><span class="section-number">02 / Projects</span><div><h2>Research projects</h2><p class="section-desc">Funded research on school sport, public fitness, and sports services.</p></div></div>
+        <div class="split"><div></div><ul class="project-list">
+          <li class="project"><span class="project-year">2026–2028</span><div><h3>Quality improvement and transformation of Chongqing’s “15-minute fitness circle”</h3><p>Chongqing Sports Bureau key project · A202631.</p></div></li>
+          <li class="project"><span class="project-year">2026</span><div><h3>How exercise can strengthen mental health in primary and secondary school students: mechanisms and model development</h3><p>Chongqing Education Science Planning key project.</p></div></li>
+          <li class="project"><span class="project-year">2022</span><div><h3>Collaborative governance of extended after-school sports services under the “Double Reduction” policy</h3><p>National Social Science Fund, Western Project.</p></div></li>
+          <li class="project"><span class="project-year">2020–2022</span><div><h3>Implementation of Chongqing’s “1+5+1” action plan: status and policy recommendations</h3><p>Chongqing Sports Bureau · D202008.</p></div></li>
+          <li class="project"><span class="project-year">2019–2022</span><div><h3>Quality evaluation report on online continuing education in sport</h3><p>Southwest University online and continuing education research project · SWU1908022.</p></div></li>
+          <li class="project"><span class="project-year">2017–2020</span><div><h3>Collection and application of sports big data in Chongqing</h3><p>Chongqing Sports Bureau · B201712.</p></div></li>
+          <li class="project"><span class="project-year">2015–2018</span><div><h3>Public sports services in Chongqing under coordinated urban–rural development: current status and policy recommendations</h3><p>Southwest University fundamental research project · SWU1509169.</p></div></li>
+          <li class="project"><span class="project-year">2014–2017</span><div><h3>Policy responses to the tension between market-driven student mobility and administrative allocation of educational resources in rural primary and secondary schools</h3><p>Chongqing major decision-making consultation research project.</p></div></li>
+        </ul></div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="container">
+        <div class="section-heading"><span class="section-number">03 / Teaching</span><div><h2>Books &amp; teaching</h2><p class="section-desc">Textbooks, courses, and teaching development.</p></div></div>
+        <div class="split"><div></div><ul class="recognition">
+          <li class="recognition-item"><span class="recognition-year">2022</span><div><strong>Specialized Training: Theory and Practice (Yoga)</strong><span class="detail">Chongqing first-class blended undergraduate course.</span></div></li>
+          <li class="recognition-item"><span class="recognition-year">2021</span><div><strong>Sports Management</strong><span class="detail">Graduate online course development · Southwest University.</span></div></li>
+          <li class="recognition-item"><span class="recognition-year">2020–2022</span><div><strong>Online open course development</strong><span class="detail">Southwest University course development project.</span></div></li>
+          <li class="recognition-item"><span class="recognition-year">2020</span><div><strong>Exploration and practice of Internet-enabled evaluation of physical education teaching quality</strong><span class="detail">Southwest University teaching reform project.</span></div></li>
+          <li class="recognition-item"><span class="recognition-year">2015</span><div><strong>Methods of Teaching Physical Education</strong><span class="detail">Lead translator · Chongqing University Press.</span></div></li>
+          <li class="recognition-item"><span class="recognition-year">2013</span><div><strong>Aerobics</strong><span class="detail">Editor-in-chief · Southwest China Normal University Press.</span></div></li>
+          <li class="recognition-item"><span class="recognition-year">2009</span><div><strong>Body Conditioning and Health</strong><span class="detail">Editor-in-chief · Henan People's Publishing House.</span></div></li>
+        </ul></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="contact" id="contact">
+    <div class="container"><p class="eyebrow">Contact</p><h2>Get in touch.</h2><p>For research collaboration and academic correspondence, please use the email below.</p><p class="contact-detail"><a href="mailto:327743382@qq.com">327743382@qq.com</a> &nbsp;·&nbsp; Southwest University, Chongqing</p><p style="margin-top:15px;font-size:14px"><a href="https://cte.swu.edu.cn/info/1018/4768.htm" target="_blank" rel="noopener noreferrer">University profile ↗</a> &nbsp;·&nbsp; <a href="https://orcid.org/0009-0007-5194-9960" target="_blank" rel="noopener noreferrer">ORCID ↗</a></p></div>
+  </section>
+  <footer><div class="container footer-inner"><span>© Jing Huang</span><span>Academic profile · Updated September 2026</span></div></footer>
+</body>
+</html>
